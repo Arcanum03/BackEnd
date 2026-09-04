@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block title %}Bienvenida{% endblock %}
+
+{% block extra_style %}
+    .hero {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        max-width: 960px;
+    }
+
+    .hero-content h1 {
+        font-family: var(--font-display);
+        font-size: 2.6rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+        color: var(--text-muted);
+        font-size: 1.05rem;
+        max-width: 40ch;
+        margin-bottom: 2rem;
+    }
+
+    .hero-graphic {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.9rem;
+        height: 180px;
+        flex-shrink: 0;
+    }
+
+    .bar {
+        width: 28px;
+        border-radius: 6px 6px 0 0;
+        background: var(--accent-soft);
+    }
+
+    .bar:nth-child(1) { height: 55%; background: var(--accent-soft); }
+    .bar:nth-child(2) { height: 85%; background: var(--accent); }
+    .bar:nth-child(3) { height: 40%; background: var(--accent-soft); }
+    .bar:nth-child(4) { height: 100%; background: var(--accent-dark); }
+
+    .features {
+        max-width: 960px;
+        margin-top: 3.5rem;
+    }
+
+    .feature-item {
+        display: flex;
+        gap: 1.25rem;
+        padding: 1.25rem 0;
+        border-top: 1px solid var(--border);
+    }
+
+    .feature-icon {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: var(--accent-soft);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+    }
+
+    .feature-item h3 {
+        font-family: var(--font-display);
+        font-size: 1.05rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .feature-item p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+    }
+{% endblock %}
+
+{% block content %}
+<div>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Escucha lo que tu comunidad realmente piensa.</h1>
+            <p>Crea encuestas en minutos, recibe respuestas en tiempo real y transforma opiniones en decisiones.</p>
+            <a href="#" class="btn btn-primary">Crear mi primera encuesta</a>
+        </div>
+        <div class="hero-graphic">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item">
+            <div class="feature-icon">📝</div>
+            <div>
+                <h3>Crea</h3>
+                <p>Diseña encuestas con preguntas de opción múltiple, escalas o texto abierto.</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">💬</div>
+            <div>
+                <h3>Responde</h3>
+                <p>Comparte un enlace y recibe respuestas desde cualquier dispositivo.</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">📊</div>
+            <div>
+                <h3>Analiza</h3>
+                <p>Revisa resultados y estadísticas a medida que llegan las respuestas.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

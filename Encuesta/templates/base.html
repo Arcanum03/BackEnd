@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Plataforma de Encuestas{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F3F5F9;
+            --surface: #FFFFFF;
+            --text: #1B1F3B;
+            --text-muted: #5B6178;
+            --accent: #4C4FEB;
+            --accent-dark: #3638B0;
+            --accent-soft: #E9E9FC;
+            --error: #E2574C;
+            --border: #E1E4ED;
+            --font-display: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .site-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 3rem;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .brand span { color: var(--accent); }
+
+        .tagline {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .site-footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        {% block extra_style %}{% endblock %}
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a href="{% url 'bienvenida' %}" class="brand">Encuestas<span>+</span></a>
+        <span class="tagline">Escucha. Analiza. Decide.</span>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Plataforma de Encuestas</p>
+    </footer>
+</body>
+</html>
